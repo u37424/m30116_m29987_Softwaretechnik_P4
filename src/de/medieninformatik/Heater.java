@@ -14,12 +14,12 @@ public class Heater implements Beobachter<Integer>{
 
     public void turnHeaterOn(){
         isHeaterOn = true;
-        System.out.println("\u001B[31mHeizung eingeschaltet");
+        System.out.println("\033[0;91mHeizung eingeschaltet");
     }
 
     public void turnHeaterOff(){
         isHeaterOn = false;
-        System.out.println("\u001B[31mHeizung ausgeschaltet");
+        System.out.println("\033[0;91mHeizung ausgeschaltet");
     }
 
     @Override

@@ -2,7 +2,7 @@ package de.medieninformatik;
 
 import java.util.LinkedList;
 
-public class Beobachtbar<T> {
+public abstract class Beobachtbar<T> {
     private LinkedList<Beobachter> observers;
 
     public Beobachtbar() {

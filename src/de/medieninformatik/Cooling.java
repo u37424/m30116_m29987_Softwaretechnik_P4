@@ -14,12 +14,12 @@ public class Cooling implements Beobachter<Integer>{
 
     public void turnCoolingOn(){
         isCoolerOn = true;
-        System.out.println("\u001B[36mKühlung eingeschaltet");
+        System.out.println("\033[0;96mKühlung eingeschaltet");
     }
 
     public void turnCoolingOff(){
         isCoolerOn = false;
-        System.out.println("\u001B[36mKühlung ausgeschaltet");
+        System.out.println("\033[0;96mKühlung ausgeschaltet");
     }
 
     @Override
