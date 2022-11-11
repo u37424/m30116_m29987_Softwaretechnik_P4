@@ -1,6 +1,6 @@
 package de.medieninformatik;
 
-public class Cooling {
+public class Cooling implements Beobachter<Integer>{
     private final int MAX_TEMP = 40;
     private boolean isCoolerOn;
 
@@ -14,11 +14,16 @@ public class Cooling {
 
     public void turnCoolingOn(){
         isCoolerOn = true;
-        System.out.println("Kühlung eingeschaltet");
+        System.out.println("\u001B[36mKühlung eingeschaltet");
     }
 
     public void turnCoolingOff(){
         isCoolerOn = false;
-        System.out.println("Kühlung ausgeschaltet");
+        System.out.println("\u001B[36mKühlung ausgeschaltet");
+    }
+
+    @Override
+    public void changed(Integer wert) {
+        changeTemp(wert);
     }
 }

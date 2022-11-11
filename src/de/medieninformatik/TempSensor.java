@@ -1,23 +1,22 @@
 package de.medieninformatik;
 
-public class TempSensor {
+public class TempSensor extends Beobachtbar<Integer> {
     private int temp;
-    private Heater heater;
-    private Cooling cooling;
 
-    public TempSensor(Heater heater, Cooling cooling){
-        this.heater = heater;
-        this.cooling = cooling;
+    public TempSensor() {
+        super();
+        System.out.println("\u001B[32mThermostat eingeschaltet bei " + temp + " Grad.\n");
     }
 
-    public void setTemperatur(int temp){
+    public void setTemperatur(int temp) {
+        if (temp == this.temp) return;
         this.temp = temp;
         statusMessage();
-        heater.changeTemp(temp);
-        cooling.changeTemp(temp);
+        notifyAllListeners(temp);
+        System.out.println();
     }
 
     private void statusMessage() {
-        System.out.println("Sensor meldet "+ temp + " Grad.");
+        System.out.println("\u001B[32mSensor meldet " + temp + " Grad.");
     }
 }
