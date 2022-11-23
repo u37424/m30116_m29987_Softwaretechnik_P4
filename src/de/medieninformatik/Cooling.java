@@ -1,5 +1,7 @@
 package de.medieninformatik;
 
+import java.io.Console;
+
 public class Cooling implements Beobachter<Integer>{
     private final int MAX_TEMP = 40;
     private boolean isCoolerOn;
